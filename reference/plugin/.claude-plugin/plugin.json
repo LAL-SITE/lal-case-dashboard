@@ -1,0 +1,21 @@
+{
+  "name": "lal-support-suite",
+  "version": "3.1.0",
+  "description": "LAL Support Suite for Florida family law: a clients home and case overview over one case file that drives § 61.30 child support (step-down and scenario PDFs, scenario tabs, AI goal planner), § 61.08 (2023) alimony, the FMLG seven-column equitable distribution chart and equalizer with affidavit and disclosure import and mediation and client boards, and the Form 12.902(c) (06/25) financial affidavit generator.",
+  "author": {
+    "name": "Legal Authority Lab",
+    "url": "https://legalauthoritylab.blog"
+  },
+  "homepage": "https://legalauthoritylab.blog",
+  "keywords": [
+    "florida",
+    "family law",
+    "child support",
+    "alimony",
+    "equitable distribution",
+    "financial affidavit",
+    "mediation",
+    "goal planner",
+    "mandatory disclosure"
+  ]
+}

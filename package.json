@@ -1,0 +1,11 @@
+{
+  "name": "laia-case-manager",
+  "version": "4.0.0-dev",
+  "private": true,
+  "description": "Laia Case Manager (Legal Authority Lab) — Florida child support, alimony, ED, financial affidavit, discovery and boards",
+  "scripts": {
+    "test:reference": "node tests/check-reference.js reference/current/laia-support-app-v3.3.html",
+    "test": "node tests/check-reference.js dist/laia-case-manager.html"
+  },
+  "devDependencies": { "playwright": "^1.47.0" }
+}

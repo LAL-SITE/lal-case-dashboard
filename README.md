@@ -1,6 +1,6 @@
-# Laia Support App — v4 build kit
+# Laia Case Manager — v4 build kit
 
-Start here. This folder is the starting repository for rebuilding the Laia Support App in Claude Code.
+Start here. This folder is the starting repository for rebuilding the Laia Case Manager (formerly the Laia Support App) in Claude Code.
 
 ## What's inside
 
@@ -17,9 +17,9 @@ Start here. This folder is the starting repository for rebuilding the Laia Suppo
 
 ## How to start in Claude Code
 
-1. Create a private GitHub repository (for example `legal-authority-lab/laia-support-app`) and push this folder as the first commit.
+1. This repository (`LAL-SITE/lal-case-dashboard`) now holds the kit; it replaced the earlier FMLG Case Command Center demo.
 2. Open it in Claude Code. First prompt: "Read CLAUDE.md, docs/SPEC.md and docs/REVIEW.md. Run npm run test:reference. Then propose the v4 folder structure and the engine module API before writing code."
 3. Work phase by phase from `docs/REVIEW.md`. Do not start screens until the engine reproduces every golden case.
-4. When a build passes, bring `dist/laia-support-app.html` back to the claude.ai workspace to publish it to the existing Laia Support App link and to rebuild the tiiny demo.
+4. When a build passes, bring `dist/laia-case-manager.html` back to the claude.ai workspace to publish it to the existing app link and to rebuild the tiiny demo.
 
 Working calculations and drafts for attorney review. Not legal advice; nothing is cleared for filing.

@@ -1,6 +1,6 @@
-# CLAUDE.md — Laia Support App v4
+# CLAUDE.md — Laia Case Manager v4
 
-This repository is the rebuild of the **Laia Support App** (Legal AI Assistant), a Florida family-law app sold by Legal Authority Lab (LAL). It calculates § 61.30 child support, § 61.08 alimony, equitable distribution and the Form 12.902(c) financial affidavit from one case file, drafts documents for attorney review, tracks discovery and builds mediation, hearing and trial boards.
+This repository is the rebuild of the **Laia Case Manager** (Legal AI Assistant; v3.x shipped as the Laia Support App), a Florida family-law app sold by Legal Authority Lab (LAL). It calculates § 61.30 child support, § 61.08 alimony, equitable distribution and the Form 12.902(c) financial affidavit from one case file, drafts documents for attorney review, tracks discovery and builds mediation, hearing and trial boards.
 
 Owner: Leisa Wintz (product, legal rules). Engineering owner: Henry (structure, review, merges). Read `docs/SPEC.md` before changing behavior and `docs/REVIEW.md` for the plan.
 
@@ -19,7 +19,7 @@ Owner: Leisa Wintz (product, legal rules). Engineering owner: Henry (structure, 
 ## Engineering rules
 
 - Keep the calculation engine in `src/engine/` with **no DOM code**. Screens import it. The demo, the Tennessee build and Claude skills must be able to call the same engine.
-- One versioned case-file schema (`src/schema/`). Older .json files (v3 `{app, v, state}`) must open through an upgrade function, never fail.
+- One versioned case-file schema (`src/schema/`). Older .json files (v3 `{app, v, state}`) must open through an upgrade function, never fail. v3 files carry `"app": "Laia Support App"`; the upgrade accepts that name as well as `"Laia Case Manager"`.
 - Screens update only what changed. No whole-page re-render on every keystroke; preserve cursor and scroll.
 - Ship as **one self-contained HTML file** (bundle PDF, Word, Excel and PDF-text libraries in). It must run offline and inside a claude.ai artifact (no external fetches except Google Fonts with fallbacks).
 - Editions (Basic, Pro, Premium, Ultra) and the Demo come from one source via a build flag. The demo locks: host-locked to tiiny/legalauthoritylab domains, no save/open/new client/downloads (show a preview modal instead), AI steps show a preview, names fixed, outputs stamped DEMO.

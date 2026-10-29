@@ -1,4 +1,4 @@
-# Laia Support App — behavior spec (as built in v3.3, 2026-10-29)
+# Laia Case Manager — behavior spec (as built in v3.3, 2026-10-29)
 
 This is what the app does today. v4 keeps every behavior here unless `docs/REVIEW.md` changes it. The running reference is `reference/current/laia-support-app-v3.3.html`; open it in Chrome and load Demo 1 (Rivera) or Demo 2 (Johnson) from the Product guide.
 

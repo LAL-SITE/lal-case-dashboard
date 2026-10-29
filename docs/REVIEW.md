@@ -1,4 +1,4 @@
-# Laia Support App — UX and engineering review (2026-10-29)
+# Laia Case Manager — UX and engineering review (2026-10-29)
 
 Live, editable copy: "Laia Support App — UX and Engineering Review" doc in Leisa's claude.ai artifacts. This file is the snapshot the v4 build works from.
 

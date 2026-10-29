@@ -1,0 +1,191 @@
+{
+ "capturedFrom": "Laia Support App v3.3 (artifact version 20), 2026-10-29",
+ "note": "Golden values: v4 must reproduce these exactly unless a change is approved and logged.",
+ "childSupport": {
+  "final": 2299.73,
+  "payer": "B",
+  "netA": 3811.47,
+  "netB": 6920.62,
+  "grossA": 3200,
+  "grossB": 9500,
+  "overnightsA": 307,
+  "overnightsB": 58,
+  "alimonyUsed": 0
+ },
+ "scenarios": [
+  {
+   "name": "Standard (73 nights)",
+   "final": 2363.97,
+   "payer": "B"
+  },
+  {
+   "name": "30% (110 nights)",
+   "final": 1928.4,
+   "payer": "B"
+  }
+ ],
+ "ed": {
+  "equalizer": null,
+  "keys": {
+   "netP": 22814.06,
+   "netR": 169600,
+   "estate": 192414.06,
+   "target": 96207.03,
+   "eq": 73392.97,
+   "amt": 73392.97,
+   "afterP": 96207.03,
+   "afterR": 96207.03
+  }
+ },
+ "gaps": 12,
+ "coc": {
+  "ours": [
+   [
+    "faS",
+    "Not Applicable"
+   ],
+   [
+    "faL",
+    "Produced"
+   ],
+   [
+    "tax",
+    "Produced"
+   ],
+   [
+    "pay",
+    "Produced"
+   ],
+   [
+    "incst",
+    "Produced"
+   ],
+   [
+    "loan",
+    "Will Be Produced"
+   ],
+   [
+    "deed",
+    "Will Be Produced"
+   ],
+   [
+    "bank",
+    "Produced"
+   ],
+   [
+    "brok",
+    "Will Be Produced"
+   ],
+   [
+    "ret",
+    "Will Be Produced"
+   ],
+   [
+    "crypto",
+    "Not Applicable"
+   ],
+   [
+    "ins",
+    "Produced"
+   ],
+   [
+    "corp",
+    "Not Applicable"
+   ],
+   [
+    "debt",
+    "Will Be Produced"
+   ],
+   [
+    "pre",
+    "Not Applicable"
+   ],
+   [
+    "modag",
+    "Not Applicable"
+   ],
+   [
+    "uneq",
+    "Not Applicable"
+   ],
+   [
+    "orders",
+    "Not Applicable"
+   ]
+  ],
+  "opp": [
+   [
+    "faS",
+    "Not Applicable"
+   ],
+   [
+    "faL",
+    "Will Be Produced"
+   ],
+   [
+    "tax",
+    "Produced"
+   ],
+   [
+    "pay",
+    "Will Be Produced"
+   ],
+   [
+    "incst",
+    "Produced"
+   ],
+   [
+    "loan",
+    "Will Be Produced"
+   ],
+   [
+    "deed",
+    "Will Be Produced"
+   ],
+   [
+    "bank",
+    "Produced"
+   ],
+   [
+    "brok",
+    "Will Be Produced"
+   ],
+   [
+    "ret",
+    "Will Be Produced"
+   ],
+   [
+    "crypto",
+    "Not Applicable"
+   ],
+   [
+    "ins",
+    "Will Be Produced"
+   ],
+   [
+    "corp",
+    "Will Be Produced"
+   ],
+   [
+    "debt",
+    "Produced"
+   ],
+   [
+    "pre",
+    "Not Applicable"
+   ],
+   [
+    "modag",
+    "Not Applicable"
+   ],
+   [
+    "uneq",
+    "Not Applicable"
+   ],
+   [
+    "orders",
+    "Not Applicable"
+   ]
+  ]
+ }
+}

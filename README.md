@@ -1,14 +1,25 @@
-# FMLG Case Command Center
+# Laia Support App — v4 build kit
 
-Live demo: https://fmlgpa.github.io/lal-case-dashboard
+Start here. This folder is the starting repository for rebuilding the Laia Support App in Claude Code.
 
-Mobile-first AI case dashboard for Florida family law attorneys. Features:
-- Case profile with matter details, active track, team
-- AI chat pre-loaded with full case context
-- Next steps with urgency indicators — tap to send prompt to AI
-- Document file list with status badges
-- Bottom nav: Case / Chat / Steps / Files
+## What's inside
 
-Built with React (CDN) — runs directly on GitHub Pages. No build step required.
+- `CLAUDE.md` — the rules Claude Code follows in this repo (firm non-negotiables + engineering rules). Read first.
+- `docs/SPEC.md` — every tab and section as built in v3.3, with tiers and calculation notes. This is the behavior to keep.
+- `docs/REVIEW.md` — the UX and engineering review and the v4 plan, in order, with gates.
+- `docs/FORMAT-MASTERS.md` — which firm format master each output must match, and where it lives.
+- `reference/current/` — the running v3.3 app, the v3.3 demo edition, and the v3.2 base the layers sit on.
+- `reference/layers/` — the v3.3 source layers (disco/assessments/retro, disco scan + COC + boards, slim header, demo lock), readable on their own.
+- `reference/plugin/` — the lal-support-suite Claude plugin (v3.1.0): SKILL.md, case-file schema, calculation basis, ED chart format, FA 12.902(c) line map. Useful source for the v4 schema and engine notes.
+- `tests/fixtures/` — the two demo case files (fictional).
+- `tests/expected/` — golden values captured from v3.3. `npm run test:reference` proves the reference still matches; `npm test` runs the same checks against the v4 build.
+- `tests/real-worksheets/` — put anonymized real cases here (see the README inside).
 
-© Legal Authority Lab | legalauthoritylab.com
+## How to start in Claude Code
+
+1. Create a private GitHub repository (for example `legal-authority-lab/laia-support-app`) and push this folder as the first commit.
+2. Open it in Claude Code. First prompt: "Read CLAUDE.md, docs/SPEC.md and docs/REVIEW.md. Run npm run test:reference. Then propose the v4 folder structure and the engine module API before writing code."
+3. Work phase by phase from `docs/REVIEW.md`. Do not start screens until the engine reproduces every golden case.
+4. When a build passes, bring `dist/laia-support-app.html` back to the claude.ai workspace to publish it to the existing Laia Support App link and to rebuild the tiiny demo.
+
+Working calculations and drafts for attorney review. Not legal advice; nothing is cleared for filing.

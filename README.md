@@ -7,6 +7,7 @@ Start here. This folder is the starting repository for rebuilding the Laia Case 
 - `CLAUDE.md` — the rules Claude Code follows in this repo (firm non-negotiables + engineering rules). Read first.
 - `docs/SPEC.md` — every tab and section as built in v3.3, with tiers and calculation notes. This is the behavior to keep.
 - `docs/REVIEW.md` — the UX and engineering review and the v4 plan, in order, with gates.
+- `docs/V4-PLAN.md` — the proposed v4 folder structure and engine API (step 2 below), waiting on Leisa and Henry.
 - `docs/FORMAT-MASTERS.md` — which firm format master each output must match, and where it lives.
 - `reference/current/` — the running v3.3 app, the v3.3 demo edition, and the v3.2 base the layers sit on.
 - `reference/layers/` — the v3.3 source layers (disco/assessments/retro, disco scan + COC + boards, slim header, demo lock), readable on their own.

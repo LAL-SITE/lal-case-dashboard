@@ -4,14 +4,14 @@ Status: **proposal for Leisa and Henry. No v4 code is written yet.** This answer
 
 ## 1. What v3.3 looks like inside (measured 2026-10-29)
 
-- `npm run test:reference` passes: all 16 golden checks match for Rivera and Johnson.
-- I also checked the golden values the harness does **not** test today: gross income per party, overnights, alimony used, the full ED breakdown (netP, netR, estate, target, eq, amt, afterP, afterR) and the discovery gap count. All of them reproduce exactly on v3.3, with no script errors. The certificate-of-compliance markers are in the golden files but are not checked yet.
+- `npm run test:reference` now checks **every** value in `tests/expected` (136 checks, up from 16): child support, payer, net and gross income, overnights, alimony used, each scenario's amount, name and payer, the full ED breakdown, the discovery gap count, the certificate-of-compliance marker for each of the 18 items on both sides, and zero script errors. All 136 pass on v3.3 (step 1 of section 4, done 2026-10-30).
+- The certificate markers were captured after **Scan & update**, which loads a built-in demo folder list for the two demo case numbers. That list is not in the fixtures, so the harness runs the scan before reading the markers. In v4 the demo folder list belongs in the fixtures (or the demo build), not hard-coded beside the scanner.
 - The app is one 724 KB HTML file with 22 inline scripts and 4 libraries loaded from cdnjs at run time (jsPDF, jspdf-autotable, JSZip, SheetJS). pdf.js is loaded on demand.
 - The main script (sc04, 399 KB) defines 403 functions. 12 of them are defined twice (`render`, `stepDown`, `renderNav`, `saveLocal` …). In each case the later definition wins. Later layers also replace functions by assignment (for example, v3.2's scenario levers replace `scenState`).
 - **The math already has no DOM code.** `schedule`, `bracketTax`, `partyIncome`, `overnightsFor`, `calculate`, `scenState`, `effState`, `edVal`, `edRow`, `edCompute`, `alimonyAssess`, `stepDown`, `modTest`, `solveLever` and `solveGoal` never touch the page. The work is to take them out of global scope:
   - `edCompute`, `alimonyAssess`, `stepDown`, `modTest`, `linkedAlimony`, `gaps` and `retroModel` read the globals `S` (case), `R` (current result) or `EDC` (cached ED result) instead of taking arguments.
   - The certificate-of-compliance markers (`autoMarker` in the v3.3b layer) live inside a closure, reachable only through `window.DISCO`.
-- **Date dependence.** The disco coverage checks (6/12/24 months, 3 years) and the retro "through" default use `new Date()`. The same case file gives different gaps or markers on a different day. v4 passes an `asOf` date in, and the tests pin it to the capture date (2026-10-29).
+- **Date dependence.** The disco coverage flags ("4 of 6 months" on pay stubs and statements, 3 years of returns) and the retro "through" default use `new Date()`, so they change from day to day. The gap count and the certificate markers do not (checked by moving the clock to 2027). v4 passes an `asOf` date in; the harness already pins the browser clock to the capture date, 2026-10-29.
 
 ## 2. Folder structure
 
@@ -82,7 +82,7 @@ Claude skills (lal-support-suite) and the Tennessee build import the same `src/e
 
 ## 4. How we get there without moving a number
 
-1. **Extend the golden harness first.** Check every value already in `tests/expected` (gross, overnights, the ED breakdown, gaps, COC markers), with `asOf` pinned to 2026-10-29. No golden file changes; v3.3 already reproduces all of them except the COC markers, which are not checked yet.
+1. **Extend the golden harness first.** *Done 2026-10-30:* every value in `tests/expected` is checked (136), clock pinned to 2026-10-29, script errors fail the run, and a one-cent change to a golden value fails it. No golden file changed.
 2. **Extract verbatim.** Copy the final effective definition of each engine function (after all 19 layers) into `src/engine`, unchanged, then replace `S`/`R`/`EDC` reads with parameters.
 3. **Parity test.** For each fixture, run v3.3 in Playwright and v4's engine in Node, and deep-compare the whole result objects, not just the headline numbers. Gate: zero differences.
 4. **Only then refactor** (names, structure), with the parity test as the safety net.
